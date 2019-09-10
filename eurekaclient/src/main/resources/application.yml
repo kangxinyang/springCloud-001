@@ -1,0 +1,21 @@
+#服务端口号
+server:
+  port: 8011  #Provider消费服务者启动后，把端口号改成8011，在通过ProviderApplication2启动，实现负载均衡
+
+
+# 当前服务注册在 Eureka Server名字
+spring:
+  application:
+    name: provider   #服务提供者
+
+
+#配置 Eureka Server 注册中心
+eureka:
+  client:
+    service-url:              #注册中心的地址
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true   #是否将当前服务的 ip注册到 Eureka Server
+
+
+
